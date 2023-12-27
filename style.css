@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#000000;  /*fundo de cor */
+    --secondary-color: #19022b; /*cor de fundo superior */
+}
+
+body{
+    background-color: var(--primary-color); /*fundo de cor */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+
+header{
+    padding:1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color: var(--secondary-color);
+}
+
+.search{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding:0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color:rgb(255, 255, 255); 
+    font-family: inherit;
+}
+
+.search:focus{
+    outline:0;
+    background-color: var(--primary-color);
+}
+
+.search::placeholder{
+    color: #ffffff; /*letra da barra de pesquisa*/
+}
+
+main{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie {
+    width: 300px;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1); /*sombra bem de leve*/
+    background-color: var(--secondary-color);
+    position:relative;
+    overflow: hidden;
+}
+
+
+.movie img{
+    width:100%;
+}
+
+.movie-info{
+    color:rgb(255, 255, 255); /*titulo do filme*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+}
+
+.movie-info span{
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green{ /*quando o filme é bem avaliado */
+    color:lightgreen;
+}
+
+.movie-info span.orange{ /*quando o filme é razoavelmente avaliado */
+    color:orange;
+}
+
+.movie-info span.red{ /*quando o filme não é bem avaliado */
+    color:red;
+}
+
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgb(0, 0, 0);  /* fundo de cor sinopse */
+    color: #ffffff;  /* letras da sinopse */
+    padding: 1rem;
+    max-height: 100%;
+    transform:translateY(101%);
+    transition:transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform:translateY(0)
+}
+
+#tags{
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.tag{
+    color:rgb(255, 255, 255);  /*letra dos botoes de filtro de filmes */
+    padding:10px 20px;
+    background-color: rgb(0, 0, 0);  /*fundo dos botoes de filtro de filmes */
+    border-radius: 50px;
+    margin:5px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+.tag.highlight{
+    background-color: rgb(105, 105, 105);  /*quando voce clika em um filtro de filme*/
+}
+.no-results{
+    color:white; /*quando nao encontra o trailer do filme*/
+}
+
+.pagination{
+    display:flex;
+    margin:10px 30px;
+    align-items: center;
+    justify-content: center;
+    color:rgb(255, 255, 255); /*Voltar pagina e proxima pagina */
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+.page.disabled{
+    cursor:not-allowed;
+    color:rgb(97, 97, 97);/*Voltar Página*/
+}
+
+.current{
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid rgb(0, 0, 0); /*circulo do numero da pag e trailer */
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.know-more{
+    background-color: #000; /*botão abaixo da sinopse*/
+    color:white; /* titulo do filme */
+    font-size: 16px;
+    font-weight: bold;
+    border:0;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+/* A sobreposição (fundo) */
+    .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /*Cor de reserva preta */
+    background-color: rgba(0,0,0, 0.9); /* Preto c/opacidade */
+    overflow-x: hidden; 
+    transition: 0.5s; 
+}
+
+ /* Posiciona o conteúdo dentro da sobreposição */
+.overlay-content {
+    position: relative;
+    top: 10%; 
+    width: 100%;
+    text-align: center; 
+    margin-top: 30px; 
+}
+
+  /* os links de navegação dentro da sobreposição */
+    .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ffffff; /*seta e x no trailer*/
+    display: block; 
+    transition: 0.3s; 
+    }
+    
+  /* Ao passar o mouse sobre os links de navegação, altere sua cor */
+    .overlay a:hover, .overlay a:focus {
+    color: #ff0000; /*seta e X ao passar o mouse no trailer*/
+    }
+    
+    
+    .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    }
+
+    @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+    }
+
+
+    .embed.hide{
+    display: none;
+    }
+
+    .embed.show{
+    display: inline-block;
+    }
+
+    .arrow{
+    position: absolute;
+    font-size: 40px;
+    }
+
+    .arrow.left-arrow{
+    top:50%;
+    left:5%;
+    transform: translateY(-50%);
+    }
+
+  
+  .arrow.right-arrow{
+    top:50%;
+    transform: translateY(-50%);
+    right:5%;
+}
+
+.dots{
+    margin-top: 30px;
+}
+
+.dots .dot {
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: rgb(255, 255, 255); /*numero do circulo no trailer*/
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.dots .dot.active{
+    border-color:  rgb(255, 255, 255); /*circulo do numero no trailer*/
+}
