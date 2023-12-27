@@ -30,4 +30,4 @@ JavaScript: Adicionar funcionalidades interativas, como a capacidade de reproduz
 - ``JavaScript``
 
 ## 📁 Acesso ao projeto
-Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/ruannlz/lista-defilmes).
+Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/ruannlz/lista-de-filmes).
