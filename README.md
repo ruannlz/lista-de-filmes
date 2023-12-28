@@ -6,12 +6,12 @@ O projeto "Lista de Filmes" é uma aplicação da web que utiliza HTML, CSS e Ja
 
 ## 🔨 Funcionalidades do projeto
 
--  ` Funcionalidade 1 `  ` Exibição de Catálogo de Filmes: ` : HTML: Utilizar elementos HTML, como listas ordenadas ou não ordenadas, para criar o catálogo de filmes.
-CSS: Estilizar o catálogo para garantir uma apresentação atraente.
-JavaScript: Adicionar interatividade, como a capacidade de classificar ou filtrar os filmes com base em gênero, ano de lançamento, etc.
--  ` Funcionalidade 2 `  ` Detalhes do Filme: ` : HTML: Criar páginas individuais para cada filme, exibindo detalhes como título, sinopse, elenco, etc.
-CSS: Aplicar estilos para garantir uma apresentação coesa e atraente.
-JavaScript: Adicionar funcionalidades interativas, como a capacidade de reproduzir trailers ao clicar em um botão.
+-  ` Funcionalidade 1 `  ` Exibição de Catálogo de Filmes: ` : HTML: Utilizei elementos HTML, como listas ordenadas ou não ordenadas, para criar o catálogo de filmes.
+CSS: Estilizei o catálogo para garantir uma apresentação atraente.
+JavaScript: Adicionei interatividade, como a capacidade de ver os trailers.
+-  ` Funcionalidade 2 `  ` Detalhes do Filme: ` : HTML: Criei páginas individuais para cada filme, exibindo detalhes como título, trailer, etc.
+CSS: Aplicquei estilos para garantir uma apresentação coesa e atraente.
+JavaScript: Adicionei funcionalidades interativas, como a capacidade de reproduzir trailers ao clicar em um botão.
 
 # ✅ Baixar o projeto
 
