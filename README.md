@@ -1,5 +1,3 @@
-# Projeto pessoal
-
 # Resumo do projeto
 O projeto "Lista de Filmes" é uma aplicação da web que utiliza HTML, CSS e JavaScript para oferecer uma experiência interativa aos usuários na visualização e interação com uma pequena coleção de filmes.
 
